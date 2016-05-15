@@ -87,7 +87,7 @@ int main()
 	pos_embarc(player2);
 	
 	
-	printf("-----------GAME STARTED-----------\n\n");
+	printf("----------------------GAME STARTED----------------------\n\n");
 	
 	while(end!=1)
 	{
