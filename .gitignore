@@ -1,0 +1,6 @@
+*.o
+*.dev
+*.layout
+*.rc
+Batata_Naval_private.h
+Makefile.win
