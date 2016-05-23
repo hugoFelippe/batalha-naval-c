@@ -1,7 +1,5 @@
-# batata-naval-c
+# Batata Naval c
 
 #### Todo List
-> Colocar numeração na parte inferior
-> Adicionar cores para melhor identificação
-> Adicionar embarcações na tela
-> Adicionar especiais
+* Adicionar ataques especiais
+* Completar desenvolvimento da inteligencia artificial
