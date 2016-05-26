@@ -18,7 +18,8 @@ void init_game()
 					game_set_ship(2);
 				}
 				else
-					p = game_data.last_move
+					p = game_data.last_move;
+					
 				while(end!=true)
 				{
 					atk(p);
@@ -43,7 +44,8 @@ void init_game()
 					game_AI_set_ship(2);
 				}
 				else
-					p = game_data.last_move
+					p = game_data.last_move;
+					
 				while(end!=true)
 				{
 					if(p == 1)
@@ -71,7 +73,8 @@ void init_game()
 					game_AI_set_ship(2);
 				}
 				else
-					p = game_data.last_move
+					p = game_data.last_move;
+					
 				while(end!=true)
 				{
 					ia_atk(p);

@@ -19,7 +19,6 @@ void save_game(int last_move)
 		system("pause");
 		exit(1);
 	}
-	save_game.partida
 	strcpy(save_game.partida, game_data.player_1.nom);
 	strcat(save_game.partida, " VS ");
 	strcat(save_game.partida, game_data.player_2.nom);
