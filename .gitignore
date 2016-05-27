@@ -2,5 +2,6 @@
 *.dev
 *.layout
 *.rc
+*.res
 Batata_Naval_private.h
 Makefile.win
