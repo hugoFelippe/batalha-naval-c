@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "dep.h"
 ///Variaveis Globais
 extern Game_dat game_data;
@@ -11,10 +12,12 @@ int i, j;
 void load_game(void)
 {
 	int i, j, choice;
-	FILE *arq;
-	Save save_game;
-	
+	FILE * arq;
+	Save save_game[10], save_gm;
 	next = false;
+	
+	srand( (unsigned)time(NULL) );
+	
 	while(next == false)
 	{
 		textcolor(LIGHT_BLUE);
@@ -155,6 +158,7 @@ void load_game(void)
 				ship_data.atk_especial		= true;
 		}
 		game_data.game_save_load = false;
+		game_data.id = rand();
 	}
 	else
 	{
@@ -167,17 +171,16 @@ void load_game(void)
 			exit(0);
 		}
 		
-		fread(&save_game, sizeof(Save), 1, arq);
-		printf("[%d° PARTIDA] - %s\n", i, save_game.partida);
-		
+		fread(&save_game[i-1], sizeof(Save), 1, arq);
 		while (!feof(arq))
 		{
 			i++;
-			fread(&save_game, sizeof(Save), 1, arq);
-			printf("[%d° PARTIDA] - %s\n", i, save_game.partida);
+			fread(&save_game[i-1], sizeof(Save), 1, arq);
 		}
 		fclose(arq);
 		
+		for(j=0;j<i-1;j++)
+			printf("[%d° PARTIDA] - %s\n", j+1, save_game[j].partida);
 		
 		
 		printf("\n[ESCOLHA O NUMERO DA PARTIDA] - ");
@@ -187,26 +190,26 @@ void load_game(void)
 		arq = fopen("save_game","rb+");
 		if(arq == NULL)
 		{
-			printf("Erro ao ler arquivo salvas\n");
+			printf("Erro ao ler arquivo salvo\n");
 			system("pause");
 			exit(0);
 		}
 		
 		i = 1;
-		fread(&save_game, sizeof(Save), 1, arq);
+		fread(&save_gm, sizeof(Save), 1, arq);
 			
 		if(i != choice)
 			while (!feof(arq))
 			{
 				i++;
-				fread(&save_game, sizeof(Save), 1, arq);
+				fread(&save_gm, sizeof(Save), 1, arq);
 				
 				if(i == choice)
 					break;
 			}
 		
-		game_data = save_game.game_data;
-		ship_data = save_game.ship_data;
+		game_data = save_gm.game_data;
+		ship_data = save_gm.ship_data;
 		game_data.game_save_load = true;		
 	}	
 }

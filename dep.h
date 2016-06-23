@@ -1,6 +1,7 @@
 #define EASY 10
 #define REGULAR 20
 #define HELL 30
+
 ///Colors
 enum COLORS {
     BLACK, BLUE, GREEN, CYAN, RED, MAGENTA, BROWN,
@@ -41,6 +42,7 @@ typedef struct Player_str Player;
 
 struct Game_str
 {
+	int id;
 	int game_mode;
 	int game_level;
 	int last_move;

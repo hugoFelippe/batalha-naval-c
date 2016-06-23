@@ -13,6 +13,7 @@ void game_set_ship(int player)
 	int i, j, x, y, orientacao;
 	int ind = 0;
 	int lvl = game_data.game_level;
+	srand( (unsigned)time(NULL) );
 	
 	if(player == 1)
 		player_str = game_data.player_1;
