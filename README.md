@@ -1,5 +1,5 @@
 # Batata Naval c
 
 #### Todo List
-- [ ] Adicionar ataques especiais
+- [x] Adicionar ataques especiais
 - [ ] Completar desenvolvimento da inteligencia artificial
