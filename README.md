@@ -1,5 +1,9 @@
 # Batata Naval c
 
+
+
 #### Todo List
 - [x] Adicionar ataques especiais
-- [ ] Completar desenvolvimento da inteligencia artificial
+- [ ] Melhorar interface
+- [ ] Melhorar modos de jogo
+- [ ] Melhorar save-game
